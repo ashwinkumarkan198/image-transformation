@@ -1,0 +1,18 @@
+% Matlab code for Power Law Transformation
+img = imread('Sampleimage.jpg');
+
+% Convert datatype to Double
+% (for allowing fractional values)
+r = double(img);
+
+% The below value represents gamma
+G = 0.6;
+
+% Applying the Power Law Transformation
+S = C * (r .^G);
+T = 255/(C * (255 .^G));
+
+% Converting the datatype back
+% to integer for displaying
+O = uint8(T * S);
+figure,imshow(O); title('Power Law Transformation');
